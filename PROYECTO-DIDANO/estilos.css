@@ -1,0 +1,25 @@
+body {
+    background: white;
+}
+
+div.figure {
+    float: center;
+    width: 100%;
+    margin-top: 75px;
+}
+
+div.figure p {
+    text-align: center;
+    font-weight: bold;
+    font-size: large;
+    color: blue;
+    text-indent: 0;
+}
+
+.nombre {
+    color: #23F352;
+    text-align: center;
+    font: oblique bold 120% cursive;
+    font-size: 500%;
+    margin-top: 150px;
+}

@@ -1,27 +1,30 @@
 p {
-    color:#C6ADC5; 
-
+    color: #C6ADC5;
 }
-body { background-image: url("http://photos.demandstudios.com/getty/article/81/145/87773242.jpg")}
 
-
-.informacion{
-  width:350px;
-  padding:40px 30px;
-  background:rgba(235,235,205,0.7);
-  border-radius:4px;
-  -moz-border-radius:4px;
-  -webkit-border-radius:4px;
-  margin:50px auto;
-  color:#5C8B42; 
+body {
+    background-image: url("http://photos.demandstudios.com/getty/article/81/145/87773242.jpg")
 }
-.form-group{
+
+.informacion {
+    width: 350px;
+    padding: 40px 30px;
+    background: rgba(235, 235, 205, 0.7);
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    margin: 50px auto;
+    color: #5C8B42;
+}
+
+.form-group {
     color: #5AA531;
     position: relative;
-    margin-bottom:15px;
+    margin-bottom: 15px;
     font-size: 18px;
 }
-.answer{
+
+.answer {
     color: #5AA531;
     position: relative;
     margin-bottom: 15px;

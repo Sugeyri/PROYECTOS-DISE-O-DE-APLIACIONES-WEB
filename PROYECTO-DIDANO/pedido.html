@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="img/logo.ico">
+    <link rel="stylesheet" href="style-b.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Realizar Pedido</title>
+</head>
+
+<body>
+    <div class="container container-ph">
+        <div class="page-header">
+            <h2>Realizar Pedido</h2>
+        </div>
+    </div>
+    <div class="container container-ped-1">
+        <form action="" class="">
+            <div class="form-group">
+                <label for="codigo">Código:</label>
+                <input class="form-control" id="codigo" type="text" placeholder="Código de producto">
+            </div>
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input class="form-control" id="nombre" type="text" placeholder="Nombre">
+            </div>
+            <div class="form-group">
+                <label for="cantidad">Cantidad:</label>
+                <input class="form-control" id="cantidad" type="text" placeholder="Cantidad">
+            </div>
+            <button class="btn btn-xs btn-success">Agregar</button>
+        </form>
+    </div>
+    <br>
+    <div class="container container-tabla">
+        <div class="table-responsive">
+            <table class="table table-hover ">
+                <tr class="info">
+                    <th>Código</th>
+                    <th>Nombre</th>
+                    <th>Cantidad</th>
+                    <th>Unidad</th>
+                    <th>Precio</th>
+                    <th>Sub-Total</th>
+                </tr>
+                <tr>
+                    <td>0005</td>
+                    <td>Naranja Pelada</td>
+                    <td>150</td>
+                    <td>UND</td>
+                    <td>155</td>
+                    <td>23.250</td>
+                </tr>
+                <tr>
+                    <td>0008</td>
+                    <td>Papaya</td>
+                    <td>7</td>
+                    <td>KG</td>
+                    <td>780</td>
+                    <td>5.460</td>
+                </tr>
+                <tr>
+                    <td>0065</td>
+                    <td>Repollo Morado</td>
+                    <td>7.5</td>
+                    <td>KG</td>
+                    <td>980</td>
+                    <td>7.350</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="container container-ped-2">
+        <br>
+        <form action="" class="">
+            <div class="form-group">
+                <label for="fecha-entrega">Fecha de entrega:</label>
+                <input class="form-control" id="fecha-entrega" type="text" placeholder="Fecha de entrega">
+            </div>
+            <div class="form-group">
+                <label for="cod-cliente">Código Cliente:</label>
+                <input class="form-control" id="cod-cliente" type="text" placeholder="Código Cliente">
+            </div>
+            <div class="form-group">
+                <label for="responsable">Responsable:</label>
+                <input class="form-control" id="responsable" type="text" placeholder="Responsable">
+            </div>
+            <div class="form-group">
+                <label for="total">Total:</label>
+                <input class="form-control" id="total" type="text" placeholder="Total">
+            </div>
+            <div class="form-group">
+                <label for="notas">Notas:</label>
+                <input class="form-control" id="notas" type="text" placeholder="Escriba sus notas">
+            </div>
+            <button class="btn btn-lg btn-primary">Enviar</button>
+        </form>
+    </div>
+</body>
+<br><br>
+</html>

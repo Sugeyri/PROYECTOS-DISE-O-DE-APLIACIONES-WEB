@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="img/logo.ico">
+    <link rel="stylesheet" href="style-b.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <title>Agregar Cliente</title>
+</head>
+
+<body>
+    <div class="container container-ph">
+        <div class="page-header">
+            <h2>Agregar Cliente</h2>
+        </div>
+    </div>
+    <div class="container container-cl">
+        <form action="" class="">
+            <div class="form-group">
+                <label for="codigo">Código:</label>
+                <input class="form-control" id="codigo" type="text" placeholder="Código Cliente">
+            </div>
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input class="form-control" id="nombre" type="text" placeholder="Nombre">
+            </div>
+            <div class="form-group">
+                <label for="ruta">Ruta:</label><br>
+                <div class="btn-group">
+                    <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        Seleccione una opción <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Ciudad Quesada</a></li>
+                        <li><a href="#">Pital</a></li>
+                        <li><a href="#">Fortuna</a></li>
+                        <li><a href="#">Cen Cinai</a></li>
+                    </ul>
+                </div>
+            </div>
+              <div class="form-group">
+                <label for="responsable">Responsable:</label>
+                <input class="form-control" id="responsable" type="text" placeholder="Responsable">
+            </div>
+            <div class="form-group">
+                <label for="direccion">Dirección:</label>
+                <input class="form-control" id="direccion" type="text" placeholder="Dirección">
+            </div>
+             <div class="form-group">
+                <label for="telefono">Teléfono:</label>
+                <input class="form-control" id="telefono" type="text" placeholder="Teléfono">
+            </div>
+             <div class="container container-v1">
+                    <a href="#ventana2" class="btn btn-lg btn-success" data-toggle="modal">Agregar</a>
+                    <button type="button" class="btn btn-lg btn-default" >Editar</button>
+            <div class="modal fade" id="ventana2">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h2 class="modal-title">¿Desea agregar el cliente?</h2>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-primary">Aceptar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </form>
+    </div>
+    <br>
+    <div class="container container-tabla">
+        <div class="table-responsive">
+            <table class="table table-hover ">
+                <tr class="info">
+                    <th>Código</th>
+                    <th>Nombre</th>
+                    <th>Ruta</th>
+                    <th>Responsable</th>
+                    <th>Dirección</th>
+                    <th>Teléfono</th>
+                    
+                </tr>
+                <tr>
+                    <td>0001</td>
+                    <td>Escuela Juan Chaves</td>
+                    <td>Ciudad Quesada</td>
+                    <td>Daniela Porras</td>
+                    <td>Frente a Coopelesca, CQ centro</td>
+                    <td>2460-9876 / 8970-5642</td>
+                </tr>
+                <tr>
+                    <td>0002</td>
+                    <td>Colegio Técnico Profesional de Pital</td>
+                    <td>Pital</td>
+                    <td>Melina Vargas</td>
+                    <td>Costado sur del parque</td>
+                    <td>2473-1265 / 2473-0028</td>
+                </tr>
+                <tr>
+                    <td>0003</td>
+                    <td>Liceo San Carlos</td>
+                    <td>Ciudad Quesada</td>
+                    <td>Rocio Fernández</td>
+                    <td>Ciudad Quesada</td>
+                    <td>2460-0332</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+          
+        
+        </form>
+    </div>
+</body>
+<br><br>
+
+</html>

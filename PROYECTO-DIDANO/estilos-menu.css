@@ -1,0 +1,92 @@
+body {
+    background: url(http://s1.1zoom.me/b5050/353/Water_Strawberry_Fruit_498535_2560x1600.jpg);
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.navbar {
+    background: #35D1BC;
+    border: 2px solid #35D1BC;
+    position: fixed;
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+.navbar-header button {
+    background: #35D1BC;
+    border: 1px solid #35D1BC;
+}
+
+.navbar-collapse {
+    float: right
+}
+
+.navbar-collapse ul li:hover {
+    background: #68F3DE;
+}
+<!--tabs-->
+
+.tabbable-panel {
+  border:1px solid #eee;
+  padding: 10px;
+}
+.tabbable-line > .nav-tabs {
+  border: none;
+  margin: 0px;
+}
+.tabbable-line > .nav-tabs > li {
+  margin-right: 2px;
+}
+.tabbable-line > .nav-tabs > li > a {
+  border: 0;
+  margin-right: 0;
+  color: #737373;
+}
+.tabbable-line > .nav-tabs > li > a > i {
+  color: #a6a6a6;
+}
+.tabbable-line > .nav-tabs > li.open, .tabbable-line > .nav-tabs > li:hover {
+  border-bottom: 4px solid #4C76FA;
+}
+.tabbable-line > .nav-tabs > li.open > a, .tabbable-line > .nav-tabs > li:hover > a {
+  border: 0;
+  background:rgba(55,157,142,0.2);
+  color: #333333;
+}
+.tabbable-line > .nav-tabs > li.open > a > i, .tabbable-line > .nav-tabs > li:hover > a > i {
+  color: #a6a6a6;
+}
+.tabbable-line > .nav-tabs > li.open .dropdown-menu, .tabbable-line > .nav-tabs > li:hover .dropdown-menu {
+  margin-top: 0px;
+}
+.tabbable-line > .nav-tabs > li.active {
+  border-bottom: 4px solid blue;
+  position: relative;
+}
+.tabbable-line > .nav-tabs > li.active > a {
+  border: 0;
+  color: #333333;
+}
+.tabbable-line > .nav-tabs > li.active > a > i {
+  color: #404040;
+}
+.tabbable-line > .tab-content {
+  margin-top: -3px;
+  border: 0;
+  padding: 15px 0;
+}
+.portlet .tabbable-line > .tab-content {
+  padding-bottom: 0;
+}
+ .col-md-12 h3{
+    color: #379D8E;
+    font-weight: bold;
+    font-size: 40px;
+}
+.tab-pane active .col-md-12{
+    margin: 20px;
+}

@@ -9,53 +9,38 @@
     <link rel="stylesheet" href="style-b.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <title>Agregar Producto</title>
+    <title>Agregar Empleado</title>
 </head>
 
 <body>
     <div class="container container-ph">
         <div class="page-header">
-            <h2>Agregar Producto</h2>
+            <h2>Agregar Empleado</h2>
         </div>
     </div>
     <div class="container container-prod">
         <form action="" class="">
             <div class="form-group">
-                <label for="codigo">Código:<p>*</p></label>
-                <input class="form-control" id="codigo" type="text" placeholder="Código de producto"title="Favor rellenar este campo!" required>
+                <label for="codigo">Código: <p>*</p></label>
+                <input class="form-control" id="codigo" type="text" placeholder="Código de empleado"title="Favor rellenar este campo!" required>
             </div>
             <div class="form-group">
                 <label for="nombre">Nombre: <p>*</p></label>
-                <input class="form-control" id="nombre" type="text" placeholder="Nombre"title="Favor rellenar este campo!" required>
+                <input class="form-control" id="nombre" type="text" placeholder="Nombre" title="Favor rellenar este campo!" required>
             </div>
-            <div class="form-group">
-                <label for="familia">Familia: <p>*</p></label><br>
-                <div class="btn-group">
-                    <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                        Seleccione una opción <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Frutas</a></li>
-                    </ul>
-                </div>
-            </div>
-              <div class="form-group">
-                <label for="unidad">Unidad: <p>*</p></label>
-                <input class="form-control" id="unidad" type="text" placeholder="Unidad"title="Favor rellenar este campo!" required>
-            </div>
-            <div class="form-group">
-                <label for="precio">Precio: <p>*</p></label>
-                <input class="form-control" id="precio" type="text" placeholder="Precio"title="Favor rellenar este campo!" required>
+             <div class="form-group">
+                <label for="telefono">Teléfono: <p>*</p></label>
+                <input class="form-control" id="telefono" type="text" placeholder="Teléfono"title="Favor rellenar este campo!" required>
             </div>
              <div class="container container-v1">
-                    <a href="#ventana2" class="btn btn-lg btn-success" data-toggle="modal">Agregar</a>
+                    <a href="#ventana1" class="btn btn-lg btn-success" data-toggle="modal">Agregar</a>
                     <button type="button" class="btn btn-lg btn-default" >Editar</button>
-            <div class="modal fade" id="ventana2">
+            <div class="modal fade" id="ventana1">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h2 class="modal-title">¿Desea agregar el producto?</h2>
+                            <h2 class="modal-title">¿Desea agregar el empleado?</h2>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
@@ -74,31 +59,27 @@
                 <tr class="info">
                     <th>Código</th>
                     <th>Nombre</th>
-                    <th>Familia</th>
-                    <th>Unidad</th>
-                    <th>Precio</th>
-                    
+                    <th>Teléfono</th>                    
                 </tr>
                 <tr>
                     <td>0001</td>
-                    <td>Piña Primera</td>
-                    <td>Frutas</td>
-                    <td>KG</td>
-                    <td>900</td>
+                    <td>Jose Daniel González</td>
+                    <td>8829-7398</td>
                 </tr>
                 <tr>
                     <td>0002</td>
-                    <td>Sandía</td>
-                    <td>Frutas</td>
-                    <td>KG</td>
-                    <td>980</td>
+                    <td>Mauricio González</td>
+                    <td>8825-4693</td>
                 </tr>
                 <tr>
                     <td>0003</td>
-                    <td>Zanahoria</td>
-                    <td>Hortalizas</td>
-                    <td>UND</td>
-                    <td>800</td>
+                    <td>Jose Zamora</td>
+                    <td>7089-5632</td>
+                </tr>
+                <tr>
+                    <td>0004</td>
+                    <td>Yeudi González</td>
+                    <td>8760-3682</td>
                 </tr>
             </table>
         </div>

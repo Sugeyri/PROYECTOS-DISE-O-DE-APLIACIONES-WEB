@@ -80,46 +80,55 @@
         <form action="" class="">
             <div class="form-group">
                 <label for="fecha-entrega">Fecha de entrega:</label>
-                <input class="form-control" id="fecha-entrega" type="text" placeholder="Fecha de entrega">
-            </div>
-            <div class="form-group">
-                <label for="cod-cliente">Código Cliente:</label>
-                <input class="form-control" id="cod-cliente" type="text" placeholder="Código Cliente">
-            </div>
-            <div class="form-group">
-                <label for="responsable">Responsable:</label>
-                <input class="form-control" id="responsable" type="text" placeholder="Responsable">
-            </div>
-            <div class="form-group">
-                <label for="total">Total:</label>
-                <input class="form-control" id="total" type="text" placeholder="Total">
-            </div>
-            <div class="form-group">
-                <label for="notas">Notas:</label>
-                <input class="form-control" id="notas" type="text" placeholder="Escriba sus notas">
-            </div>
-
-            <div class="container container-v1">
-                    <a href="#ventana2" class="btn btn-lg btn-primary" data-toggle="modal">Enviar</a>
-
-            <div class="modal fade" id="ventana2">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h2 class="modal-title">¿Desea enviar el pedido?</h2>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                            <button type="button" class="btn btn-primary">Aceptar</button>
+                <div class="row">
+                 <div class='col-sm-2'>
+                        <div class="form-group">
+                            <div class='input-group date' id='datetimepicker1'>
+                                <input type='text' class="form-control" placeholder="Seleccione una fecha" />
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            </div>
-        
+                <div class="form-group">
+                    <label for="cod-cliente">Código Cliente:</label>
+                    <input class="form-control" id="cod-cliente" type="text" placeholder="Código Cliente">
+                </div>
+                <div class="form-group">
+                    <label for="responsable">Responsable:</label>
+                    <input class="form-control" id="responsable" type="text" placeholder="Responsable">
+                </div>
+                <div class="form-group">
+                    <label for="total">Total:</label>
+                    <input class="form-control" id="total" type="text" placeholder="Total">
+                </div>
+                <div class="form-group">
+                    <label for="notas">Notas:</label>
+                    <input class="form-control" id="notas" type="text" placeholder="Escriba sus notas">
+                </div>
+
+                <div class="container container-v1">
+                    <a href="#ventana2" class="btn btn-lg btn-primary" data-toggle="modal">Enviar</a>
+
+                    <div class="modal fade" id="ventana2">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <h2 class="modal-title">¿Desea enviar el pedido?</h2>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                                    <button type="button" class="btn btn-primary">Aceptar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
         </form>
-    </div>
+        </div>
 </body>
 <br><br>
 

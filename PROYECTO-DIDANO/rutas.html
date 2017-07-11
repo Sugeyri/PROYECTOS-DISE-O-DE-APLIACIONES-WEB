@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,38 +18,26 @@
 
 			<div class="tabbable-panel">
 				<div class="tabbable-line">
-					<ul class="nav nav-tabs ">
-						<li class="active">
-							<a href="#tab-cq" data-toggle="tab">
-							Ciudad Quesada </a>
-						</li>
-						<li>
-							<a href="#tab-pital" data-toggle="tab">
-							Pital </a>
-						</li>
-						<li>
-							<a href="#tab-fortuna" data-toggle="tab">
-							Fortuna</a>
-						</li>
-                        <li>
-							<a href="#tab-cen" data-toggle="tab">
-							Cen Cinai</a>
-						</li>
+					<ul class="nav nav-tabs" role="tablist">
+						<li class="active" role="presentation"><a href="#tab-cq" aria-controls="tab-cq" data-toggle="tab" role="tab">Ciudad Quesada </a></li>
+						<li role="presentation"><a href="#tab-pital" aria-controls="tab-pital" data-toggle="tab" role="tab">Pital </a></li>
+						<li role="presentation"><a href="#tab-fortuna"  aria-controls="tab-fortuna" data-toggle="tab" role="tab">Fortuna</a></li>
+                        <li role="presentation"><a href="#tab-cen"  aria-controls="tab-cen" data-toggle="tab" role="tab">Cen Cinai</a></li>
 					</ul>
 					<div class="tab-content">
-						<div class="tab-pane active" id="tab-cq">
+						<div role="tabpanel" class="tab-pane active" id="tab-cq">
 						<img id="foto" class="col-md-12" src="http://labicikleta-klwlpeerjtyso.stackpathdns.com/wp-content/uploads/2014/04/GoogleMaps.jpg" alt="">
                         <br><br><br>
                         <a class="btn btn-info" href="http://www.censobibliotecasmep.fundepredi.org/Doc/Lista-Codigos.pdf" target="blank">
                         Ver lista institucional</a>
 						</div>
-						<div class="tab-pane" id="tab-pital">
+						<div role="tabpanel" class="tab-pane" id="tab-pital">
 							
 						</div>
-						<div class="tab-pane" id="tab-fortuna">
+						<div role="tabpanel" class="tab-pane" id="tab-fortuna">
 							
 						</div>
-                        <div class="tab-pane" id="tab-cen">
+                        <div role="tabpanel" class="tab-pane" id="tab-cen">
 							
 						</div>
 					</div>
@@ -60,5 +48,6 @@
 </div>
 <br>
 <br>
+<script src="http:/code.jquery.com/jquery-latest.js"></script>
 </body>
 </html>

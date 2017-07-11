@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -19,22 +19,13 @@
 
                 <div class="tabbable-panel">
                     <div class="tabbable-line">
-                        <ul class="nav nav-tabs ">
-                            <li class="active">
-                                <a href="#tab-ped-pendientes" data-toggle="tab">
-							Pendientes </a>
-                            </li>
-                            <li>
-                                <a href="#tab-ped-proceso" data-toggle="tab">
-							En Proceso </a>
-                            </li>
-                            <li>
-                                <a href="#tab-ped-realizados" data-toggle="tab">
-							Realizados </a>
-                            </li>
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="active" role="presentation"><a href="#tab-ped-pendientes"  aria-controls="tab-ped-pendientes" data-toggle="tab" role="tab">Pendientes </a></li>
+                            <li role="presentation"><a href="#tab-ped-proceso" aria-controls="tab-ped-proceso" data-toggle="tab" role="tab">En Proceso </a></li>
+                            <li role="presentation"><a href="#tab-ped-realizados" aria-controls="tab-ped-realizados" data-toggle="tab" role="tab">Realizados </a></li>
                         </ul>
                         <div class="tab-content">
-                            <div class="tab-pane active" id="tab-ped-pendientes">
+                            <div role="tabpanel" class="tab-pane active" id="tab-ped-pendientes">
                                 <div class="container container-tabla">
                                     <br><br>
                                     <label for="datetimepicker1">Seleccione el rango de fechas que desea buscar: </label>
@@ -171,7 +162,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane" id="tab-ped-proceso">
+                            <div role="tabpanel" class="tab-pane" id="tab-ped-proceso">
                                 <div class="container container-tabla">
                                     <div class="table-responsive">
                                         <table class="table table-hover ">
@@ -184,7 +175,8 @@
                                                 <th>Notas</th>
                                                 <th>Total</th>
                                                 <th>Estado</th>
-
+                                                <th></th>
+                                                <th></th>
                                             </tr>
                                             <tr>
                                                 <td>0001</td>
@@ -300,7 +292,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane" id="tab-ped-realizados">
+                            <div role="tabpanel"  class="tab-pane" id="tab-ped-realizados">
                                 <div class="container container-tabla">
                                     <div class="table-responsive">
                                         <table class="table table-hover ">
@@ -397,6 +389,7 @@
     </div>
     <br>
     <br>
+<script src="http:/code.jquery.com/jquery-latest.js"></script>
     <br>
 </body>
 

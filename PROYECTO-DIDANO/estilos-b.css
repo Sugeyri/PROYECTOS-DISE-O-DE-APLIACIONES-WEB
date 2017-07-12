@@ -1,38 +1,46 @@
 /*--header--*/
-.navbar{
+
+.navbar {
     background: #88F75C;
     border: 2px solid #88F75C;
     position: fixed;
     width: 100%;
     margin-bottom: 100px;
 }
-.navbar-header button{
-    background: #60E52D; 
+
+.navbar-header button {
+    background: #60E52D;
     border: 1px solid #58DE25;
 }
+
 .navbar-collapse {
-   float: right
+    float: right
 }
-.navbar-collapse ul li:hover{
+
+.navbar-collapse ul li:hover {
     background: #57F918;
 }
-body{
+
+body {
     background-image: url(https://s-media-cache-ak0.pinimg.com/736x/7b/2c/bf/7b2cbf411e2c9c78fcef1c7fe92ca3c6.jpg);
 }
-.container h2{
+
+.container h2 {
     font-weight: bold;
     color: #5EA148;
     text-align: center;
 }
-.container p{
+
+.container p {
     color: #5EA148;
     text-align: center;
 }
-.container article{
+
+.container article {
     border: 2px dashed #5EA148;
 }
-footer{
-    background:rgba(151,234,123,0.5);
+
+footer {
+    background: rgba(151, 234, 123, 0.5);
     text-align: right;
-    
 }

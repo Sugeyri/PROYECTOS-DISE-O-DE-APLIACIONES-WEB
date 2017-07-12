@@ -1,4 +1,3 @@
-
 9
 10
 11
@@ -15,14 +14,14 @@
 22
 23
 $(document).ready(main);
- 
+
 var contador = 1;
- 
-function main(){
-	$('.menu_bar').click(function(){
+
+function main() {
+	$('.menu_bar').click(function () {
 		// $('nav').toggle(); 
- 
-		if(contador == 1){
+
+		if (contador == 1) {
 			$('nav').animate({
 				left: '0'
 			});
@@ -33,7 +32,7 @@ function main(){
 				left: '-100%'
 			});
 		}
- 
+
 	});
- 
+
 };

@@ -19,7 +19,7 @@
         </div>
     </div>
     <div class="container container-cl">
-        <form action="" class="">
+        <form action="" class="" id="nuevo-cliente">
             <div class="form-group">
                 <label for="codigo">Código: <p>*</p></label>
                 <input class="form-control" id="codigo" type="text" placeholder="Código Cliente" title="Favor rellenar este campo!" required>
@@ -34,7 +34,7 @@
                     <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                         Seleccione una opción <span class="caret"></span>
                     </button>
-                    <ul class="dropdown-menu" role="menu">
+                    <ul id="ruta" class="dropdown-menu" role="menu">
                         <li><a href="#">Ciudad Quesada</a></li>
                         <li><a href="#">Pital</a></li>
                         <li><a href="#">Fortuna</a></li>
@@ -55,9 +55,9 @@
                 <input class="form-control" id="telefono" type="text" placeholder="Teléfono" title="Favor rellenar este campo!" required>
             </div>
             <div class="container container-v1">
-                <a href="#ventana2" class="btn btn-lg btn-success" data-toggle="modal">Agregar</a>
-                <button type="button" class="btn btn-lg btn-default">Editar</button>
-                <button type="button" class="btn btn-lg btn-danger">Eliminar</button>
+                 <input type="submit" id="agregar" value="Agregar" class="btn btn-lg btn-success"></input>
+             <!--<a href="#ventana2" class="btn btn-lg btn-success" data-toggle="modal">Agregar</a>-->
+                
                 <div class="modal fade" id="ventana2">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -74,44 +74,30 @@
                 </div>
             </div>
         </form>
+        
+                <input type="button" id="mostrar" value="Actualizar" class="btn btn-lg btn-default"></input>
+                 <input type="submit" value="Eliminar" class="btn btn-lg btn-danger"></input>
     </div>
     <br>
     <div class="container container-tabla">
         <div class="table-responsive">
-            <table class="table table-hover ">
-                <tr class="info">
-                    <th>Código</th>
-                    <th>Nombre</th>
-                    <th>Ruta</th>
-                    <th>Responsable</th>
-                    <th>Dirección</th>
-                    <th>Teléfono</th>
 
-                </tr>
-                <tr>
-                    <td>0001</td>
-                    <td>Escuela Juan Chaves</td>
-                    <td>Ciudad Quesada</td>
-                    <td>Daniela Porras</td>
-                    <td>Frente a Coopelesca, CQ centro</td>
-                    <td>2460-9876 / 8970-5642</td>
-                </tr>
-                <tr>
-                    <td>0002</td>
-                    <td>Colegio Técnico Profesional de Pital</td>
-                    <td>Pital</td>
-                    <td>Melina Vargas</td>
-                    <td>Costado sur del parque</td>
-                    <td>2473-1265 / 2473-0028</td>
-                </tr>
-                <tr>
-                    <td>0003</td>
-                    <td>Liceo San Carlos</td>
-                    <td>Ciudad Quesada</td>
-                    <td>Rocio Fernández</td>
-                    <td>Ciudad Quesada</td>
-                    <td>2460-0332</td>
-                </tr>
+            <table class="table table-hover ">
+                <thead>
+                    <tr class="info">
+                        <th data-field="codigo">Código</th>
+                        <th data-field="nombre">Nombre</th>
+                        <th data-field="ruta">Ruta</th>
+                        <th data-field="responsable">Responsable</th>
+                        <th data-field="direccion">Dirección</th>
+                        <th data-field="telefono">Teléfono</th>
+                    </tr>
+                </thead>
+
+                <tbody id="clientes-tabla">
+
+                </tbody>
+
             </table>
         </div>
     </div>
@@ -121,6 +107,9 @@
 
     </form>
     </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="js/agregar.js"></script>
 </body>
 <br><br>
 

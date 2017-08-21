@@ -1,6 +1,8 @@
 function annadirEventos() {
-    var btnCrear = document.getElementById("guardar");
-    btnCrear.addEventListener("click", crearUsuario);
+    var agregar = document.getElementById("agregar");
+    agregar.addEventListener("click", guardarCliente);
+
+    cargarTabla();
 
     var filas = document.querySelectorAll("tr[id]");
     for (var i = 0; i < filas.length; i++) {
@@ -8,7 +10,6 @@ function annadirEventos() {
             filaSeleccionada(this);
         }, true);
     }
-
     var btnEditar = document.getElementById("editar");
     btnEditar.addEventListener("click", editar);
     var btnEliminar = document.getElementById("eliminar");
@@ -17,7 +18,6 @@ function annadirEventos() {
 }
 
 annadirEventos();
-cargarTabla();
 
 function filaSeleccionada(row) {
     if (document.getElementsByClassName("trselected").length > 0) {
@@ -27,113 +27,73 @@ function filaSeleccionada(row) {
     row.className = "trselected";
 }
 
-function crearUsuario() {
-    var usuario = {
+function agregarCliente() {
+    var clientes = {
+        codigo: document.getElementById("codigo").value,
         nombre: document.getElementById("nombre").value,
-        apellido: document.getElementById("apellido").value,
-        usuario: document.getElementById("usuario").value,
-        correo: document.getElementById("correo").value,
-        pass: document.getElementById("clave").value,
-        npass: document.getElementById("nclave").value,
+        ruta: document.querySelector('input[name="ruta"]:checked').value,
+        responsable: document.getElementById("responsable").value,
+        direccion: document.getElementById("direccion").value,
+        telefono: document.getElementById("telefono").value,
     };
-
-    abrirSesion(usuario);
+    return clientes;
 }
 
-function abrirSesion(Usuario) {
-    var usuarios = JSON.parse(localStorage.getItem('usuarios'));
-    if ((Usuario.nombre != "") && (Usuario.apellido != "") && (Usuario.correo != "") && (Usuario.pass != "") && (Usuario.npass != "")) {
-        if (usuarios == null) {
-            if (Usuario.pass != Usuario.npass) {
-                alert("Las contraseñas son diferentes!");
-            } else {
-                guardarUsuario(Usuario);
-                limpiarCampos();
-                alert("Usuario registrado!");
-                location.href = "menu-principal.html";
-            }
-        } else {
-            var elemento;
-            for (var i = 0; i < usuarios.length; i++) {
-                elemento = usuarios[i];
-                if (elemento.correo == Usuario.correo) {
-                    alert(Usuario.correo + " ya se encuentra registrado!");
-                    document.getElementById("correo").focus();
-                    break;
-                } else if (elemento.usuario == Usuario.usuario) {
-                    alert(Usuario.usuario + " ya se encuentra registrado!");
-                    document.getElementById("usuario").focus();
-                    break;
-                } else if (Usuario.pass != Usuario.npass) {
-                    alert("Las contraseñas son diferentes!");
-                    document.getElementById("clave").focus();
-                    break;
-                } else {
-                    guardarUsuario(Usuario);
-                    limpiarCampos();
-                    alert("Usuario registrado!");
-                    location.href = "menu-principal.html";
-                    break;
-                }
-            }
-        }
+function guardarCliente(Cliente) {
+    var clientes = [];
+    if (localStorage.getItem('clientes')) {
+        clientes = JSON.parse(localStorage.getItem('clientes'));
+    }
+    var nuevoCliente = agregarCliente();
+    if ((nuevoCliente.codigo != "") && (nuevoCliente.nombre != "") && (nuevoCliente.direccion != "") && (nuevoCliente.responsable != "") && (nuevoCliente.telefono != "") && (nuevoCliente.ruta != null)) {
+        clientes.push(nuevoCliente);
+        localStorage.setItem('clientes', JSON.stringify(clientes));
     } else {
         alert("Debe llenar todos los campos!");
     }
 }
 
-function guardarUsuario(Usuario) {
-    var usuarios = [];
-    if (localStorage.getItem('usuarios')) {
-        usuarios = JSON.parse(localStorage.getItem('usuarios'));
-    }
-    usuarios.push(Usuario);
-    localStorage.setItem('usuarios', JSON.stringify(usuarios));
-    cargarTabla();
-}
-
 function limpiarCampos() {
     document.getElementById("nombre").value = "";
-    document.getElementById("apellido").value = "";
-    document.getElementById("usuario").value = "";
-    document.getElementById("correo").value = "";
-    document.getElementById("clave").value = "";
-    document.getElementById("nclave").value = "";
+    document.getElementById("codigo").value = "";
+    document.getElementById("direccion").value = "";
+    document.getElementById("telefono").value = "";
+    document.getElementById("responsable").value = "";
+    document.getElementById("ruta").value = null;
 }
 
 function cargarTabla() {
-    var user;
-    var users = JSON.parse(localStorage.getItem("usuarios"));
-    var tabla = document.getElementById("usuarios-tabla");
+    var cl;
+    var cls = JSON.parse(localStorage.getItem("clientes"));
+    var tabla = document.getElementById("clientes-tabla");
     tabla.innerHTML = null;
 
-    if (localStorage.getItem("usuarios")) {
-        for (var i = 0; i < users.length; i++) {
-            user = users[i];
-            var fila = "<tr><td>" + user.nombre + "</td><td>" + user.apellido + "</td><td>" 
-            + user.usuario + "</td><td>" + user.correo + "</td><td>" + user.pass + "</td><td>" + user.npass + "</td></tr>";
+    if (localStorage.getItem("clientes")) {
+        for (var i = 0; i < cls.length; i++) {
+            cl = cls[i];
+            var fila = "<tr><td>" + cl.codigo + "</td><td>" + cl.nombre + "</td><td>" + cl.ruta + "</td><td>" +
+                cl.direccion + "</td><td>" + cl.telefono + "</td><td>" + cl.responsable + "</td></tr>";
             tabla.innerHTML = tabla.innerHTML + fila;
         }
     }
     annadirEventos();
 }
 
-
 function eliminar() {
     if (document.getElementsByClassName("trselected").length != 0) {
         var mensaje = confirm("¿Seguro de eliminar el registro seleccionado?");
         if (mensaje) {
-            var filaSeleccionada = document.querySelectorAll("tr.trselected")[2].innerText;
-            var usuarios = JSON.parse(localStorage.getItem("usuarios"));
+            var filaSeleccionada = document.querySelectorAll("tr.trselected")[0].innerText;
+            var clientes = JSON.parse(localStorage.getItem("clientes"));
 
-            for (var i = 0; i < usuarios.length; i++) {
-                if (usuarios[i].usuario == filaSeleccionada) {
-                    if (usuarios.length != 1) {
-                        usuarios.splice(i, 1);
-                        localStorage.setItem('usuarios', JSON.stringify(usuarios));
+            for (var i = 0; i < clientes.length; i++) {
+                if (clientes[i].codigo == filaSeleccionada) {
+                    if (clientes.length != 1) {
+                        clientes.splice(i, 1);
+                        localStorage.setItem('clientes', JSON.stringify(clientes));
                         break;
                     } else {
-                        localStorage.removeItem("usuarios");
+                        localStorage.removeItem("clientes");
                         break;
                     }
                 }
@@ -148,27 +108,27 @@ function eliminar() {
 
 function editar() {
     if (document.getElementsByClassName("trselected").length != 0) {
-        var fsNom = document.querySelectorAll("tr.trselected")[0].innerText;
+        var fsCod = document.querySelectorAll("tr.trselected")[0].innerText;
+        document.getElementById("codigo").value = fsCod;
+        var fsNom = document.querySelectorAll("tr.trselected")[1].innerText;
         document.getElementById("nombre").value = fsNom;
-        var fsApe = document.querySelectorAll("tr.trselected")[1].innerText;
-        document.getElementById("apellido").value = fsApe;
-        var fsUser = document.querySelectorAll("tr.trselected")[2].innerText;
-        document.getElementById("usuario").value = fsUser;
-        var fsEmail = document.querySelectorAll("tr.trselected")[3].innerText;
-        document.getElementById("correo").value = fsEmail;
+        var fsRuta = document.querySelectorAll("tr.trselected")[2].innerText;
+        document.getElementById("ruta").value = fsRuta;
+        var fsDir = document.querySelectorAll("tr.trselected")[3].innerText;
+        document.getElementById("direccion").value = fsDir;
         var fsTel = document.querySelectorAll("tr.trselected")[4].innerText;
         document.getElementById("telefono").value = fsTel;
         var fsResp = document.querySelectorAll("tr.trselected")[5].innerText;
         document.getElementById("responsable").value = fsResp;
 
-        var gCambios = document.getElementById("guardar");
-        gCambios.removeEventListener("click", crearUsuario);
+        var gCambios = document.getElementById("agregar");
+        gCambios.removeEventListener("click", guardarCliente);
         gCambios.value = "Guardar Cambios";
         gCambios.addEventListener("click", guardarEdicion);
 
-        if (document.getElementById("cancelarUser") == null) {
+        if (document.getElementById("cancelarCl") == null) {
             var cancelar = document.createElement("button");
-            cancelar.id = "cancelarUser";
+            cancelar.id = "cancelarCl";
             var text = document.createTextNode("Cancelar");
             cancelar.appendChild(text);
             cancelar.addEventListener("click", cancelar);
@@ -232,9 +192,9 @@ function guardarEdicion() {
 
 function cancelar() {
     limpiarCampos();
-    document.getElementById("guardar").value = "Agregar";
+    document.getElementById("agregar").value = "Agregar";
     annadirEventos();
     var padre = document.getElementById("buttons");
-    var hijo = document.getElementById("cancelarUser");
+    var hijo = document.getElementById("cancelarCl");
     padre.removeChild(hijo);
 }

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" href="img/logo.ico">
-    <link rel="stylesheet" href="style-b.css">
+    <link rel="stylesheet" href="css/style-b.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <title>Agregar Cliente</title>
 </head>
@@ -28,19 +28,14 @@
                 <input class="form-control" id="nombre" type="text" placeholder="Nombre" title="Favor rellenar este campo!" required>
             </div>
             <div class="form-group">
-                <label for="ruta">Ruta: <p>*</p></label><br>
-                <div class="btn-group">
-                    <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                        Seleccione una opción <span class="caret"></span>
-                    </button>
-                    <ul id="ruta" class="dropdown-menu" role="menu">
-                        <li><a href="#">Ciudad Quesada</a></li>
-                        <li><a href="#">Pital</a></li>
-                        <li><a href="#">Fortuna</a></li>
-                        <li><a href="#">Cen Cinai</a></li>
-                    </ul>
-                </div>
-            </div>
+                <label for="Ruta">Ruta: <p>*</p></label><br>
+				<div id="Ruta">
+					<input type="radio" name="ruta" id="cq" value="Ciudad Quesada" required>Ciudad Quesada
+                    <input type="radio" name="ruta" id="pital" value="Pital" required>Pital
+					<input type="radio" name="ruta" id="fortuna" value="Fortuna" required>Fortuna
+					<input type="radio" name="ruta" id="cen" value="Cen Cinai" required>Cen Cinai
+				</div>
+			</div>
             <div class="form-group">
                 <label for="responsable">Responsable: <p>*</p></label>
                 <input class="form-control" id="responsable" type="text" placeholder="Responsable" title="Favor rellenar este campo!" required>
@@ -55,25 +50,8 @@
             </div>
             <div class="container container-v1">
                 <input type="submit" id="agregar" value="Agregar" class="btn btn-lg btn-success"></input>
-
-                <input type="button" id="mostrar" value="Actualizar" class="btn btn-lg btn-default"></input>
-                <input type="submit" value="Eliminar" class="btn btn-lg btn-danger"></input>
-                <!--<a href="#ventana2" class="btn btn-lg btn-success" data-toggle="modal">Agregar</a>-->
-
-                <div class="modal fade" id="ventana2">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                <h2 class="modal-title">¿Desea agregar el cliente?</h2>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                                <button type="button" class="btn btn-primary">Aceptar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <input type="button" id="editar" value="Editar" class="btn btn-lg btn-default"></input>
+                <input type="submit" id="eliminar" value="Eliminar" class="btn btn-lg btn-danger"></input>
             </div>
         </form>
 
@@ -81,37 +59,26 @@
     <br>
     <div class="container container-tabla">
         <div class="table-responsive">
-
-            <table class="table table-hover ">
+            <table class="table text-center ">
                 <thead>
-                    <tr class="info">
-                        <th data-field="codigo">Código</th>
-                        <th data-field="nombre">Nombre</th>
-                        <th data-field="ruta">Ruta</th>
-                        <th data-field="responsable">Responsable</th>
-                        <th data-field="direccion">Dirección</th>
-                        <th data-field="telefono">Teléfono</th>
-                    </tr>
-                </thead>
-
+                     <th class="text-center">Código</th>
+                     <th class="text-center">Nombre</th>
+                     <th class="text-center">Ruta</th>
+                     <th class="text-center">Dirección</th>
+                     <th class="text-center">Teléfono</th>
+                     <th class="text-center">Responsable</th>
+                 </thead>
                 <tbody id="clientes-tabla">
 
                 </tbody>
-
             </table>
         </div>
     </div>
-
-
-
-
     </form>
     </div>
-
-    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src= "js/bootstrap.min.js"></script>
-    <script src="js/agregar.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/agregar-cliente.js"></script>
 </body>
 <br><br>
 

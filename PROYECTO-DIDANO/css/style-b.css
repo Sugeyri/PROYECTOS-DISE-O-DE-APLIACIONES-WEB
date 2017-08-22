@@ -1,7 +1,18 @@
+body{
+    background: url(http://cdn1.wallpapersok.com/uploads/picture/864/208/208864/picture-208864.jpg?width=2560&height=1600&crop=true);
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
 .container h2 {
     color: #43DDB8;
 }
-
+table .th{
+    font-weight: bold;
+}
 .container p {
     display: inline;
     color: red;

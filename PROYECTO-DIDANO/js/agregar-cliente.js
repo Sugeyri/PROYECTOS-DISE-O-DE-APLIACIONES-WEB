@@ -39,7 +39,7 @@ function agregarCliente() {
     return clientes;
 }
 
-function guardarCliente(Cliente) {
+function guardarCliente() {
     var clientes = [];
     if (localStorage.getItem('clientes')) {
         clientes = JSON.parse(localStorage.getItem('clientes'));
@@ -113,7 +113,7 @@ function editar() {
         var fsNom = document.querySelectorAll("tr.trselected")[1].innerText;
         document.getElementById("nombre").value = fsNom;
         var fsRuta = document.querySelectorAll("tr.trselected")[2].innerText;
-        document.getElementById("ruta").value = fsRuta;
+        document.getElementsById('#'.concat(fsRuta)).checked = true;
         var fsDir = document.querySelectorAll("tr.trselected")[3].innerText;
         document.getElementById("direccion").value = fsDir;
         var fsTel = document.querySelectorAll("tr.trselected")[4].innerText;
@@ -163,7 +163,7 @@ function guardarEdicion() {
                 clientes[i].nombre = nuevoCliente.nombre;
                 break;
             }
-            if (aux.ruta == antRuta) {
+            if (aux.ruta.value == antRuta) {
                 clientes[i].ruta = nuevoCliente.ruta;
                 break;
             }

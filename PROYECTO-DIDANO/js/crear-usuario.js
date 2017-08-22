@@ -156,10 +156,10 @@ function editar() {
         document.getElementById("usuario").value = fsUser;
         var fsEmail = document.querySelectorAll("tr.trselected")[3].innerText;
         document.getElementById("correo").value = fsEmail;
-        var fsTel = document.querySelectorAll("tr.trselected")[4].innerText;
-        document.getElementById("telefono").value = fsTel;
-        var fsResp = document.querySelectorAll("tr.trselected")[5].innerText;
-        document.getElementById("responsable").value = fsResp;
+        var fsPass = document.querySelectorAll("tr.trselected")[4].innerText;
+        document.getElementById("clave").value = fsPass;
+        var fsNpass = document.querySelectorAll("tr.trselected")[5].innerText;
+        document.getElementById("nclave").value = fsNpass;
 
         var gCambios = document.getElementById("guardar");
         gCambios.removeEventListener("click", crearUsuario);
@@ -182,48 +182,49 @@ function editar() {
 
 
 function guardarEdicion() {
-    var nuevoCliente = agregarCliente();
-    if ((nuevoCliente.codigo != "") && (nuevoCliente.nombre != "") && (nuevoCliente.direccion != "") && (nuevoCliente.responsable != "") && (nuevoCliente.telefono != "") && (nuevoCliente.ruta != null)) {
-        var antCod = document.querySelectorAll("tr.trselected")[0].innerText;
-        var antNom = document.querySelectorAll("tr.trselected")[1].innerText;
-        var antRuta = document.querySelectorAll("tr.trselected")[2].innerText;
-        var antDir = document.querySelectorAll("tr.trselected")[3].innerText;
-        var antTel = document.querySelectorAll("tr.trselected")[4].innerText;
-        var antResp = document.querySelectorAll("tr.trselected")[5].innerText;
-        var clientes = JSON.parse(localStorage.getItem('clientes'));
+    var nuevoUsuario = crearUsuario();
+    if ((nuevoUsuario.nombre != "") && (nuevoUsuario.apellido != "") && (nuevoUsuario.usuario != "") && 
+        (nuevoUsuario.correo != "") && (nuevoUsuario.pass != "") && (nuevoUsuario.npass != "")) {
+        var antNom = document.querySelectorAll("tr.trselected")[0].innerText;
+        var antApe = document.querySelectorAll("tr.trselected")[1].innerText;
+        var antUser = document.querySelectorAll("tr.trselected")[2].innerText;
+        var antEmail = document.querySelectorAll("tr.trselected")[3].innerText;
+        var antPass = document.querySelectorAll("tr.trselected")[4].innerText;
+        var antNpass = document.querySelectorAll("tr.trselected")[5].innerText;
+        var usuarios = JSON.parse(localStorage.getItem('usuarios'));
         var aux;
 
-        for (var i = 0; i < clientes.length; i++) {
-            aux = clientes[i];
-            if (aux.codigo == antCod) {
-                clientes[i].codigo = nuevoCliente.codigo;
-                break;
-            }
+        for (var i = 0; i < usuarios.length; i++) {
+            aux = usuarios[i];
             if (aux.nombre == antNom) {
-                clientes[i].nombre = nuevoCliente.nombre;
+                usuarios[i].nombre = nuevoUsuario.nombre;
                 break;
             }
-            if (aux.ruta == antRuta) {
-                clientes[i].ruta = nuevoCliente.ruta;
+            if (aux.apellido == antApe) {
+                usuarios[i].apellido = nuevoUsuario.apellido;
                 break;
             }
-            if (aux.direccion == antDir) {
-                clientes[i].direccion = nuevoCliente.direccion;
+            if (aux.usuario == antUser) {
+                usuarios[i].usuario = nuevoUsuario.usuario;
                 break;
             }
-            if (aux.telefono == antTel) {
-                clientes[i].telefono = nuevoCliente.telefono;
+            if (aux.correo == antEmail) {
+                usuarios[i].correo = nuevoUsuario.correo;
                 break;
             }
-            if (aux.responsable == antResp) {
-                clientes[i].responsable = nuevoCliente.responsable;
+            if (aux.pass == antPass) {
+                usuarios[i].pass = nuevoUsuario.pass;
+                break;
+            }
+            if (aux.npass == antNpass) {
+                usuarios[i].npass = nuevoUsuario.npass;
                 break;
             }
         }
-        localStorage.setItem('clientes', JSON.stringify(clientes));
+        localStorage.setItem('usuarios', JSON.stringify(usuarios));
         cancelar();
         alert("Registro actualizado");
-        document.getElementById("codigo").focus();
+        document.getElementById("nombre").focus();
         cargarTabla();
     } else {
         alert("Agregue el nuevo registro");

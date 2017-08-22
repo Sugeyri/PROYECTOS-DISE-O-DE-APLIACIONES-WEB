@@ -2,9 +2,9 @@ function addEvents() {
     var enviar = document.getElementById("publicar");
     enviar.addEventListener("click", publicar);
 
-    var rows = document.getElementsByTagName("tr");
-    for (var i = 0; i < rows.length; i++) {
-        rows[i].addEventListener("click", function (event) {
+    var filas = document.getElementsByTagName("tr");
+    for (var i = 0; i < filas.length; i++) {
+        filas[i].addEventListener("click", function (event) {
             postSeleccionado(this);
         }, true);
     }

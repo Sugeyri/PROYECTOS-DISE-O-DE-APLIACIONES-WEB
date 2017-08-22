@@ -108,3 +108,9 @@ body {
 .tab-pane active .col-md-12 {
     margin: 20px;
 }
+footer {
+    background: rgba(59, 203, 188, 0.5);
+    text-align: right;
+    color: black;
+    font-weight: bold;
+}

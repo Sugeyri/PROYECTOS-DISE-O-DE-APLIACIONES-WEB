@@ -43,7 +43,7 @@ function guardarProducto() {
         productos = JSON.parse(localStorage.getItem('productos'));
     }
     var nuevoProd = agregarProducto();
-    if ((nuevoProd.codigo != "") && (nuevoProd.nombre != "") && (nuevoProd.familia != null) && 
+    if ((nuevoProd.codigo != "") && (nuevoProd.nombre != "") && (nuevoProd.familia != null) &&
         (nuevoProd.unidad != null) && (nuevoProd.precio != "")) {
         productos.push(nuevoProd);
         localStorage.setItem('productos', JSON.stringify(productos));
@@ -70,7 +70,7 @@ function cargarTabla() {
         for (var i = 0; i < prods.length; i++) {
             prod = prods[i];
             var fila = "<tr><td>" + prod.codigo + "</td><td>" + prod.nombre + "</td><td>" + prod.familia + "</td><td>" +
-            prod.unidad + "</td><td>" + prod.precio + "</td></tr>";
+                prod.unidad + "</td><td>" + prod.precio + "</td></tr>";
             tabla.innerHTML = tabla.innerHTML + fila;
         }
     }
@@ -139,8 +139,8 @@ function editar() {
 
 function guardarEdicion() {
     var nuevoProducto = agregarProducto();
-    if ((nuevoProducto.codigo != "") && (nuevoProducto.nombre != "") && (nuevoProducto.familia != null) 
-        && (nuevoProducto.unidad != null) && (nuevoProducto.precio != "")) {
+    if ((nuevoProducto.codigo != "") && (nuevoProducto.nombre != "") && (nuevoProducto.familia != null) &&
+        (nuevoProducto.unidad != null) && (nuevoProducto.precio != "")) {
         var antCod = document.querySelectorAll("tr.trselected")[0].innerText;
         var antNom = document.querySelectorAll("tr.trselected")[1].innerText;
         var antFam = document.querySelectorAll("tr.trselected")[2].innerText;

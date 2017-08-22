@@ -20,12 +20,12 @@ function annadirEventos() {
 annadirEventos();
 
 function filaSeleccionada(row) {
-        if (document.getElementsByClassName("trselected").length > 0) {
-            var element = document.getElementsByClassName("trselected");
-            element[0].removeAttribute("class");
-        }
-        row.className = "trselected";
-   cargarTabla();
+    if (document.getElementsByClassName("trselected").length > 0) {
+        var element = document.getElementsByClassName("trselected");
+        element[0].removeAttribute("class");
+    }
+    row.className = "trselected";
+    cargarTabla();
 }
 
 function agregarEmpleado() {

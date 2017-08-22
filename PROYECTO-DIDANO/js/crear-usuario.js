@@ -110,8 +110,8 @@ function cargarTabla() {
     if (localStorage.getItem("usuarios")) {
         for (var i = 0; i < users.length; i++) {
             user = users[i];
-            var fila = "<tr><td>" + user.nombre + "</td><td>" + user.apellido + "</td><td>" 
-            + user.usuario + "</td><td>" + user.correo + "</td><td>" + user.pass + "</td><td>" + user.npass + "</td></tr>";
+            var fila = "<tr><td>" + user.nombre + "</td><td>" + user.apellido + "</td><td>" +
+                user.usuario + "</td><td>" + user.correo + "</td><td>" + user.pass + "</td><td>" + user.npass + "</td></tr>";
             tabla.innerHTML = tabla.innerHTML + fila;
         }
     }
@@ -140,6 +140,7 @@ function eliminar() {
             }
             alert("Registro eliminado!");
             annadirEventos();
+            cargarTabla();
         }
     } else {
         alert("Debes seleccionar un registro!");
@@ -183,7 +184,7 @@ function editar() {
 
 function guardarEdicion() {
     var nuevoUsuario = crearUsuario();
-    if ((nuevoUsuario.nombre != "") && (nuevoUsuario.apellido != "") && (nuevoUsuario.usuario != "") && 
+    if ((nuevoUsuario.nombre != "") && (nuevoUsuario.apellido != "") && (nuevoUsuario.usuario != "") &&
         (nuevoUsuario.correo != "") && (nuevoUsuario.pass != "") && (nuevoUsuario.npass != "")) {
         var antNom = document.querySelectorAll("tr.trselected")[0].innerText;
         var antApe = document.querySelectorAll("tr.trselected")[1].innerText;

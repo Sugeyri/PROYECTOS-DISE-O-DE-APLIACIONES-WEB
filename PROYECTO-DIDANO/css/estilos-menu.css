@@ -1,5 +1,5 @@
 body {
-    background: url(http://s1.1zoom.me/b5050/353/Water_Strawberry_Fruit_498535_2560x1600.jpg);
+    background: url(http://www.hdfondos.eu/preview/get_photo/491322/2560/1600);
     width: 100%;
     height: 100%;
     background-size: cover;
@@ -7,7 +7,20 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
-
+form{
+    margin: auto;
+    margin-top: 50px;
+    width: 50%;
+    max-width: 500px;
+    background: rgba(69, 74, 215, 0.10) ;
+    padding: 30px;
+    border: 1px solid rgba(69, 74, 215, 0.10)c;
+    border-radius: 15px;
+    box-shadow: 0px 0px 19px 5px rgba(0,0,0,0.15);
+}
+h2{
+    font-weight: bold;
+}
 .navbar {
     background: #35D1BC;
     border: 2px solid #35D1BC;
